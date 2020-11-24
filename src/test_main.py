@@ -13,7 +13,7 @@ def test_read_main():
 def test_scores():
     test_data = None
 
-    with open(f"./testing/test.json") as file:
+    with open(f"./data/test.json") as file:
         test_data = json.loads(file.read())
 
     response = client.post("/score/",json=test_data)
