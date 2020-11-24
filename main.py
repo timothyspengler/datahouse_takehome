@@ -32,5 +32,5 @@ def read_root():
 @app.post("/score/")
 async def score_members(group: Group):
     print(group)
-    results = score_applicants(group)
-    return 1
+    results = score_applicants(group.team,group.applicants)
+    return results
