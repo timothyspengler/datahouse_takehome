@@ -7,10 +7,18 @@ This application utilizes a robust web framework called FastAPI.
 Additional information and documentation can be found at https://fastapi.tiangolo.com/
 Routes, schemas, and additional API overview of the application can be viewed at localhost:8000/docs.
 
+main can be found at:
+```
+src/main.py
+```
 ## Scoring
 When the server is running, the API is capable of taking in json input that is related to team members and various applications, and helps determine the best fit for the team by producing a score for each applicant which is between 0 and 1. The score is determined by averaging all of the team member's attributes. The team score is then used in comparison to each applicant's individual score divided by the team's average score. 
-
 We are going to assume that 40 is the max score for any invdividual.
+
+Scoring logic can be found at
+```
+src/util.py
+```
 
 # Installation
 
