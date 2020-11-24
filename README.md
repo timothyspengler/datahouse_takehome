@@ -1,14 +1,13 @@
----
----
+
+
+
 # Description
+This application offers the ability to help determine the best applicant for a group of team members.
 This application utilizes a robust web framework called FastAPI. 
-Additional information and documentation can be found at the following: https://fastapi.tiangolo.com/
+Additional information and documentation can be found at https://fastapi.tiangolo.com/
 
-When the server is running, the API offers the ability to help determine the best applicant for a team.
-Routes,JSON schemas and addiontal API overview of the application, can be viewed at ***localhost:8000/docs***.
+When the server is running, the API is capable of taking in json input that is related to team members and various applications, and helps determine the best fit for the team by producing a score for each applicant. Routes, schemas, and additional API overview of the application can be viewed at localhost:8000/docs.
 
-The server listens on port:8000 and outputs as a standard API. 
----
 # Installation
 In the project's home directory, run the following:
 
@@ -22,8 +21,13 @@ pip3 install uvicorn
 ```
 uvicorn main:app --reload
 ```
+# Endpoints
+## GET /
+Returns json containing data about author and purpose.
 
-#  Sample Schema for POST request /scores
+## POST /scores/ 
+Takes json about team members and applicants and returns a score for each applicant.
+###  Sample Schema for POST request /scores
 ```json
 {
   "team": [
@@ -54,7 +58,7 @@ uvicorn main:app --reload
   ]
 }
 ```
-### POST Response
+### POST Response Schema
 ```json
 {
 	"scoredApplicants": [{
