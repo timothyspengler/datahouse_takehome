@@ -3,12 +3,35 @@
 # November 24, 2020
 
 
-from typing import Optional
+import json
+from typing import List
 from fastapi import FastAPI
+from pydantic import BaseModel
+from util import score_applicants
 
 app = FastAPI()
+
+class Attributes(BaseModel):
+    intelligence: int
+    strength: int
+    endurance: int
+    spicyFoodTolerance: int
+
+class Person(BaseModel):
+    name: str
+    attributes: List[Attributes]
+
+class Group(BaseModel):
+    team: List[Person] = None
+    applicants: List[Person] = None
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Timothy Spengler": "DataHouse Assignment"}
+
+
+@app.post("/score/")
+async def score_members(group: Group):
+    
+    return 1
