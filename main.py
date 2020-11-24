@@ -2,7 +2,6 @@
 # DataHouse Take Home Assignment
 # November 24, 2020
 
-
 import json
 from typing import List
 from fastapi import FastAPI
@@ -30,8 +29,8 @@ class Group(BaseModel):
 def read_root():
     return {"Timothy Spengler": "DataHouse Assignment"}
 
-
 @app.post("/score/")
 async def score_members(group: Group):
-    
+    print(group)
+    results = score_applicants(group)
     return 1
