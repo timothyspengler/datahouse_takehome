@@ -2,7 +2,6 @@
 # DataHouse Take Home Assignment
 # November 24, 2020
 
-import json
 from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -29,8 +28,10 @@ class Group(BaseModel):
 def read_root():
     return {"Timothy Spengler": "DataHouse Assignment"}
 
+# Parameters: team and applicant information in json format
+# Output: Applicant Scores in json
 @app.post("/score/")
 async def score_members(group: Group):
-    print(group)
-    results = score_applicants(group.team,group.applicants)
-    return results
+    scoredApplicants = {'scoredApplicants': score_applicants(group.team,group.applicants)}
+
+    return scoredApplicants
