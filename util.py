@@ -14,7 +14,6 @@ def get_team_average(team_members):
     for member in team_members:
         attr = member.attributes[0]
         team_total += attr.intelligence + attr.strength + attr.endurance + attr.spicyFoodTolerance
-        print(team_total)
 
     team_average  = team_total / (40 * len(team_members))
 
@@ -26,8 +25,11 @@ def get_applicant_scores(applicants,team_average):
     for applicant in applicants:
         attr = applicant.attributes[0]
         average = (attr.intelligence + attr.strength + attr.endurance + attr.spicyFoodTolerance) / 40
-        score = average / team_average
-        print(score)
+        score = round(average / team_average,2)
+
+        # Keep them humble
+        if score >= 1:
+            score = .99
 
         applicant_scores.append({"name": applicant.name,"score": score})
 
