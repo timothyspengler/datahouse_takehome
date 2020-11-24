@@ -9,6 +9,7 @@ from util import score_applicants
 
 app = FastAPI()
 
+# Models
 class Attributes(BaseModel):
     intelligence: int
     strength: int
