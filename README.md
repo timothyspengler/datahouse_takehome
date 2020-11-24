@@ -20,6 +20,10 @@ pip3 install uvicorn
 ```
 uvicorn main:app --reload
 ```
+#### Server is listening on:
+```
+port: 8000
+```
 # Endpoints
 ## GET /
 Returns json containing data about author and purpose.
