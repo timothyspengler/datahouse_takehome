@@ -9,7 +9,6 @@ Additional information and documentation can be found at https://fastapi.tiangol
 When the server is running, the API is capable of taking in json input that is related to team members and various applications, and helps determine the best fit for the team by producing a score for each applicant. Routes, schemas, and additional API overview of the application can be viewed at localhost:8000/docs.
 
 # Installation
-In the project's home directory, run the following:
 
 ```
 pip3 install fastapi
@@ -26,7 +25,9 @@ uvicorn main:app --reload
 Returns json containing data about author and purpose.
 
 ## POST /scores/ 
-Takes json about team members and applicants and returns a score for each applicant.
+Input: json containing team member and applicant data
+
+Output: json containing applicant scores
 ###  Sample Schema for POST request /scores
 ```json
 {
